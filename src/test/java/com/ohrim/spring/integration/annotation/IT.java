@@ -1,6 +1,6 @@
-package com.ohrim.spring.service.integration.annotation;
+package com.ohrim.spring.integration.annotation;
 
-import com.ohrim.spring.service.integration.TestApplicationRunner;
+import com.ohrim.spring.integration.TestApplicationRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;

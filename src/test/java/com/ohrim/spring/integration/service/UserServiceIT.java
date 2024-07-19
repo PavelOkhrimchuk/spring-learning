@@ -1,8 +1,8 @@
-package com.ohrim.spring.service.integration.service;
+package com.ohrim.spring.integration.service;
 
+import com.ohrim.spring.UserService;
 import com.ohrim.spring.database.pool.ConnectionPool;
-import com.ohrim.spring.service.UserService;
-import com.ohrim.spring.service.integration.annotation.IT;
+import com.ohrim.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 

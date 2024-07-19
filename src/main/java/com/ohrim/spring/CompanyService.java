@@ -1,4 +1,4 @@
-package com.ohrim.spring.service;
+package com.ohrim.spring;
 
 import com.ohrim.spring.database.repository.CompanyRepository;
 import com.ohrim.spring.dto.CompanyReadDto;

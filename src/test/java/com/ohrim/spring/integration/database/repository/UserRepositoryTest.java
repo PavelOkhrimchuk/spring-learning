@@ -4,21 +4,41 @@ import com.ohrim.spring.database.entity.Role;
 import com.ohrim.spring.database.entity.User;
 import com.ohrim.spring.database.repository.UserRepository;
 import com.ohrim.spring.dto.UserFilter;
-import com.ohrim.spring.service.integration.annotation.IT;
+import com.ohrim.spring.integration.IntegrationTestBase;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@IT
+
 @RequiredArgsConstructor
-class UserRepositoryTest {
+@Sql({
+        "classpath:sql/data.sql"
+})
+class UserRepositoryTest extends IntegrationTestBase {
     private final UserRepository userRepository;
+
+
+
+    @Test
+    void checkBatch() {
+        var users = userRepository.findAll();
+        userRepository.updateCompanyAndRole(users);
+        System.out.println();
+    }
+
+
+    @Test
+    void checkJdbcTemplate() {
+        var users = userRepository.findAllByCompanyIdAndRole(1, Role.USER);
+        assertThat(users).hasSize(1);
+    }
 
 
     @Test
@@ -37,6 +57,8 @@ class UserRepositoryTest {
         user.setBirthDate(user.getBirthDate().plusYears(1L));
         userRepository.flush();
     }
+
+
 
     @Test
     void checkProjections() {

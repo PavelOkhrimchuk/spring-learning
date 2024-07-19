@@ -1,5 +1,7 @@
 package com.ohrim.spring.service;
 
+import com.ohrim.spring.CompanyService;
+import com.ohrim.spring.UserService;
 import com.ohrim.spring.database.entity.Company;
 import com.ohrim.spring.database.repository.CompanyRepository;
 import com.ohrim.spring.dto.CompanyReadDto;
@@ -28,7 +30,7 @@ class CompanyServiceTest {
     @Mock
     private CompanyRepository companyRepository;
     @Mock
-    private   UserService userService;
+    private UserService userService;
 
     @Mock
     private  ApplicationEventPublisher eventPublisher;

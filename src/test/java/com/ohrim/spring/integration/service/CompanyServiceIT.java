@@ -1,9 +1,9 @@
-package com.ohrim.spring.service.integration.service;
+package com.ohrim.spring.integration.service;
 
+import com.ohrim.spring.CompanyService;
 import com.ohrim.spring.config.DatabaseProperties;
 import com.ohrim.spring.dto.CompanyReadDto;
-import com.ohrim.spring.service.CompanyService;
-import com.ohrim.spring.service.integration.annotation.IT;
+import com.ohrim.spring.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,11 @@
+--liquibase formatted sql
+
+--changeset ohrim:1
+ALTER TABLE users
+    ADD column created_at TIMESTAMP;
 
 ALTER TABLE users
-ADD column created_at TIMESTAMP;
-
-ALTER TABLE users
-ADD column modified_at TIMESTAMP;
-
+    ADD column modified_at TIMESTAMP;
 
 
 ALTER TABLE users

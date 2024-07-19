@@ -1,4 +1,4 @@
-package com.ohrim.spring.service.integration;
+package com.ohrim.spring.integration;
 
 import com.ohrim.spring.database.pool.ConnectionPool;
 import org.springframework.boot.test.context.TestConfiguration;
