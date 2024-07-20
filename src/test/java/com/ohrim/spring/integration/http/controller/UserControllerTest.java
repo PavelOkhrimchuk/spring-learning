@@ -4,7 +4,6 @@ import com.ohrim.spring.integration.IntegrationTestBase;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static com.ohrim.spring.dto.UserCreateEditDto.Fields.*;
@@ -14,9 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc
 @RequiredArgsConstructor
-@Sql({
-        "classpath:sql/data.sql"
-})
+
 class UserControllerTest extends IntegrationTestBase {
 
     private final MockMvc mockMvc;

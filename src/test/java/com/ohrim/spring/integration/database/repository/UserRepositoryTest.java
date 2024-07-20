@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.time.LocalDate;
 
@@ -18,9 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @RequiredArgsConstructor
-@Sql({
-        "classpath:sql/data.sql"
-})
+
 class UserRepositoryTest extends IntegrationTestBase {
     private final UserRepository userRepository;
 

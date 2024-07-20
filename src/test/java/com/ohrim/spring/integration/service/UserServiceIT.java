@@ -8,7 +8,6 @@ import com.ohrim.spring.integration.IntegrationTestBase;
 import com.ohrim.spring.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,9 +16,6 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 @RequiredArgsConstructor
-@Sql({
-        "classpath:sql/data.sql"
-})
 public class UserServiceIT extends IntegrationTestBase {
 
     private static final Long USER_1 = 1L;
