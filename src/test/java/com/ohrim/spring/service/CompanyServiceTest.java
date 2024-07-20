@@ -1,7 +1,5 @@
 package com.ohrim.spring.service;
 
-import com.ohrim.spring.CompanyService;
-import com.ohrim.spring.UserService;
 import com.ohrim.spring.database.entity.Company;
 import com.ohrim.spring.database.repository.CompanyRepository;
 import com.ohrim.spring.dto.CompanyReadDto;
@@ -49,7 +47,7 @@ class CompanyServiceTest {
 
         assertTrue(actualResult.isPresent());
 
-        var expectedResult = new CompanyReadDto(COMPANY_ID);
+        var expectedResult = new CompanyReadDto(COMPANY_ID,  null);
         actualResult.ifPresent(actual -> assertEquals(expectedResult, actual));
 
         verify(eventPublisher).publishEvent(any(EntityEvent.class));

@@ -57,4 +57,7 @@ class CompanyRepositoryTest extends IntegrationTestBase {
        companyRepository.findByName("google");
        companyRepository.findByNameContainingIgnoreCase("a");
     }
+
+
+
 }

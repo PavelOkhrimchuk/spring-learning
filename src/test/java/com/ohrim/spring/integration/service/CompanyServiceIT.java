@@ -1,16 +1,16 @@
 package com.ohrim.spring.integration.service;
 
-import com.ohrim.spring.CompanyService;
 import com.ohrim.spring.config.DatabaseProperties;
 import com.ohrim.spring.dto.CompanyReadDto;
 import com.ohrim.spring.integration.annotation.IT;
+import com.ohrim.spring.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.TestConstructor;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @IT
 @RequiredArgsConstructor
@@ -34,7 +34,7 @@ public class CompanyServiceIT {
 
         assertTrue(actualResult.isPresent());
 
-        var expectedResult = new CompanyReadDto(COMPANY_ID);
+        var expectedResult = new CompanyReadDto(COMPANY_ID, null);
         actualResult.ifPresent(actual -> assertEquals(expectedResult, actual));
 
 
