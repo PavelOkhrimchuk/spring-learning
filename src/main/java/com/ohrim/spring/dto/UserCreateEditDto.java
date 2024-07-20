@@ -6,6 +6,7 @@ import com.ohrim.spring.validation.group.CreateAction;
 import lombok.Value;
 import lombok.experimental.FieldNameConstants;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -34,5 +35,7 @@ public class UserCreateEditDto {
 
     @NotNull
     Integer companyId;
+
+    MultipartFile image;
 
 }
