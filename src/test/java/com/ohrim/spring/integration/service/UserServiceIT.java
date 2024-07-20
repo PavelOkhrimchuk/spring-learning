@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 @RequiredArgsConstructor
 public class UserServiceIT extends IntegrationTestBase {
@@ -22,6 +22,7 @@ public class UserServiceIT extends IntegrationTestBase {
     private static final Integer COMPANY_1 = 1;
 
     private final UserService userService;
+
 
     @Test
     void findAll() {
