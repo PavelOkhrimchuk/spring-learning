@@ -18,13 +18,15 @@ class UserControllerTest extends IntegrationTestBase {
 
     private final MockMvc mockMvc;
 
+
+
     @Test
     void findAll() throws Exception {
         mockMvc.perform(get("/users"))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(view().name("user/users"))
                 .andExpect(model().attributeExists("users"));
-        //.andExpect(model().attribute("users", IsCollectionWithSize.hasSize(5)));
+
 
     }
 
