@@ -9,6 +9,10 @@ import com.ohrim.spring.validation.group.CreateAction;
 import com.ohrim.spring.validation.group.UpdateAction;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.annotation.CurrentSecurityContext;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,7 +42,9 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public String findById(@PathVariable("id") Long id, Model model) {
+    public String findById(@PathVariable("id") Long id, Model model,
+                           @CurrentSecurityContext SecurityContext securityContext,
+                           @AuthenticationPrincipal UserDetails userDetails) {
         return userService.findById(id)
                 .map(user -> {
                     model.addAttribute("user", user);
@@ -59,7 +65,7 @@ public class UserController {
     }
 
     @PostMapping
-   // @ResponseStatus(HttpStatus.CREATED)
+
     public String create(@ModelAttribute @Validated({Default.class, CreateAction.class}) UserCreateEditDto user,
                          BindingResult bindingResult,
                          RedirectAttributes redirectAttributes) {
@@ -70,7 +76,8 @@ public class UserController {
                return "redirect:/users/registration";
            }
        }
-        return "redirect:/users/" + userService.create(user).getId();
+       userService.create(user);
+        return "redirect:/login";
     }
 
 

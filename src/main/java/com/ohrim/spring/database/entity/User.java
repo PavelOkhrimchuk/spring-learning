@@ -44,6 +44,7 @@ public class User extends AuditingEntity<Long>{
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 
+    private String password;
 
 
 }

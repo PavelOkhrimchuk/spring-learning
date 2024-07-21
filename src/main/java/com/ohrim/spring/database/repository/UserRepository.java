@@ -56,9 +56,7 @@ public interface UserRepository extends JpaRepository<User,Long>, FilterUserRepo
     List<PersonalInfo2> findAllByCompanyId(Integer companyId);
 
 
-
-
-
+    Optional <User>  findByUsername(String username);
 }
 
 
