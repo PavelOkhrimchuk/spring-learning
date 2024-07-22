@@ -6,8 +6,7 @@
 </head>
 <body>
 <form th:action="@{/login}" method="post">
-
-    <div style= "color: red" th:if = "${param.error}">
+    <div style="color: red" th:if="${param.error}">
         Bad credentials
     </div>
     <label for="username">Username:
@@ -18,9 +17,12 @@
     </label><br>
     <button type="submit">Login</button>
 </form>
+<div>
+    <div>Login with:</div>
+    <a href="/oauth2/authorization/google">Google</a>
+</div>
 <form action="/users/registration">
     <button type="submit">Registration</button>
-</form>
 </form>
 </body>
 </html>
